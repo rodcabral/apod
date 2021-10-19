@@ -1,0 +1,155 @@
+:root {
+    --background: #111827;
+    --textColor: #F9FAFB;
+    --greyColor: #D1D5DB;
+    --mainColor: #6D28D9;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, button, input, textarea {
+    font-family: monospace;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    background: var(--mainColor);
+    margin-bottom: 70px;
+
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--textColor);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subtext {
+    color: var(--textColor);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: var(--textColor);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.copyright-content {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.copyright-by {
+    color: var(--greyColor);
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.copyright-name {
+    color: var(--greyColor);
+    font-size: 14px;
+}
+
+.picture-of-day-content {
+    display: flex;
+    margin-top: 30px;
+}
+
+.picture-of-day {
+    width: 550px;
+    height: 350px;
+    border-radius: 10px;
+    border: 3px solid var(--mainColor);
+    object-fit: cover;
+    object-position: 50% 50%;
+    margin-right: 20px;
+}
+
+.explanation {
+    max-width: 600px;
+    font-size: 15px;
+    color: #E5E7EB;
+    line-height: 24px;
+}
+
+.date {
+    font-size: 14px;
+    color: #E5E7EB;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 850px) {
+    .image-of-day-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-of-day {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        height: 100%;
+    }
+    .image-of-day {
+        max-width: 400px;
+        height: 200px;
+    }
+    .image-of-day-about {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .title {
+        font-size: 20px;
+    }
+    .image-of-day-content {
+        margin-top: 20px;
+    }
+    .image-of-day {
+        width: 300px;
+        height: 300px;
+    }
+    .header {
+        padding: 0px 20px;
+    }
+}
