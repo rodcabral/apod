@@ -3,6 +3,7 @@
     --textColor: #F9FAFB;
     --greyColor: #D1D5DB;
     --mainColor: #6D28D9;
+    --darkMainColor: rgb(87, 0, 128);
 }
 
 * {
@@ -42,17 +43,12 @@ button {
     display: flex;
     align-items: center;
     padding: 0px 50px;
-    justify-content: space-between;
 }
 
 .logo {
     color: var(--textColor);
     font-size: 20px;
     font-weight: bold;
-}
-
-.subtext {
-    color: var(--textColor);
 }
 
 .main {
@@ -97,59 +93,98 @@ button {
     object-fit: cover;
     object-position: 50% 50%;
     margin-right: 20px;
+    transition: 0.2s;
+}
+
+.picture-of-day:hover + .picture-link-text {
+    display: inline;
+}
+
+.picture-link {
+    position: relative;
+}
+
+.picture-link-text {
+    color: var(--textColor);
+    text-decoration: none;
+    font-size: 15px;
+    position: absolute;
+    bottom: 20px;
+    right: 60px;
+    background: var(--darkMainColor);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    transition: 0.2s;
+}
+
+.picture-link-text:hover {
+    display: inline;
+    opacity: 0.6;
 }
 
 .explanation {
     max-width: 600px;
     font-size: 15px;
-    color: #E5E7EB;
+    color: var(--textColor);
     line-height: 24px;
 }
 
 .date {
     font-size: 14px;
-    color: #E5E7EB;
+    color: var(--textColor);
     margin-top: 30px;
 }
 
 @media screen and (max-width: 850px) {
-    .image-of-day-content {
+    .container {
+        height: 100%;
+    }
+    .picture-of-day-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
-    .image-of-day {
+    .picture-of-day {
         margin-right: 0px;
         margin-bottom: 10px;
+    }
+    .picture-link-text {
+        right: 40px;
     }
 }
 
 @media screen and (max-width: 540px) {
-    .container {
-        height: 100%;
+    .header {
+        padding: 0px 0px;
+        margin-bottom: 60px;
+        justify-content: center;
     }
-    .image-of-day {
-        max-width: 400px;
-        height: 200px;
+    .picture-link {
+        width: 100%;
     }
-    .image-of-day-about {
-        font-size: 13px;
+    .picture-link-text {
+        right: 20px;
     }
-}
-
-@media screen and (max-width: 380px) {
-    .title {
-        font-size: 20px;
+    .picture-of-day-content {
+        width: 100%;
     }
-    .image-of-day-content {
-        margin-top: 20px;
-    }
-    .image-of-day {
-        width: 300px;
+    .picture-of-day {
+        width: 100%;
         height: 300px;
     }
-    .header {
-        padding: 0px 20px;
+    .picture-of-day-about {
+        font-size: 13px;
+    }
+    .logo {
+        font-size: 16px;
+        text-align: center;
+    }
+    .title {
+        text-align: center;
+    }
+    .explanation {
+        font-size: 12px;
     }
 }
